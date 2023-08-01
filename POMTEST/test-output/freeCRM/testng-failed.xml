@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [freeCRM]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.qa.extentreportlistener.ExtentReportListener"/>
+  </listeners>
   <test thread-count="5" name="CRMTest(failed)">
     <classes>
+      <class name="com.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="crmimageLogoTest"/>
+          <include name="LoginTest"/>
+          <include name="setup"/>
+          <include name="loginpageTitleTest"/>
+          <include name="teadDown"/>
+        </methods>
+      </class> <!-- com.qa.testcases.LoginPageTest -->
       <class name="com.qa.testcases.HomePageTest">
         <methods>
           <include name="UserNameLabelTest"/>
@@ -13,30 +25,6 @@
           <include name="setup"/>
         </methods>
       </class> <!-- com.qa.testcases.HomePageTest -->
-      <class name="com.qa.testcases.CreateNewContactPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-          <include name="createNewContact"/>
-        </methods>
-      </class> <!-- com.qa.testcases.CreateNewContactPageTest -->
-      <class name="com.qa.testcases.LoginPageTest">
-        <methods>
-          <include name="crmimageLogoTest"/>
-          <include name="LoginTest"/>
-          <include name="setup"/>
-          <include name="loginpageTitleTest"/>
-          <include name="teadDown"/>
-        </methods>
-      </class> <!-- com.qa.testcases.LoginPageTest -->
-      <class name="com.qa.testcases.ContactPageTest">
-        <methods>
-          <include name="setup"/>
-          <include name="createNewContact"/>
-          <include name="TearDown"/>
-          <include name="contactPagelabelTest"/>
-        </methods>
-      </class> <!-- com.qa.testcases.ContactPageTest -->
     </classes>
   </test> <!-- CRMTest(failed) -->
 </suite> <!-- Failed suite [freeCRM] -->
